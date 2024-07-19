@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <video autoplay muted loop>
+        <source src="photos/istockphoto-1335989075-640_adpp_is.mp4" type="video/mp4">
+    </video>
+    <header>
+        <div class="menu">
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+            <div class="menu-content" id="menuContent">
+                <p>Pages</p>
+                <ul>
+                    <li><a href="#">Upcoming Activities</a></li>
+                </ul>
+                <p>Sites</p>
+                <ul>
+                    <li><a href="#">Crop Management</a></li>
+                </ul>
+                <p>Account</p>
+                <ul>
+                    <li><a href="#">lewiskipkemoi53@gmail.com</a></li>
+                </ul>
+                <p>Extensions</p>
+                <p>Help</p>
+            </div>
+        </div>
+        <div class="header-content">
+            <div class="logo">
+                <img src="photos/1600w-EopC-HgEgK8.webp" alt="FarmX">
+            </div>
+            <nav>
+                <h1>Farm Management System</h1>
+
+            </nav>
+            <button class="explore-btn">Explore</button>
+        </div>
+    </header>
+    <main>
+        <section class="cards">
+            <section class="cards">
+                <div class="card" onclick="openModal()">
+                    <h2>Upcoming Activities</h2>
+                    <p>Get a snapshot of upcoming tasks and farm activities.</p>
+
+                </div>
+            </section>
+
+            <!-- Modal Structure -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Upcoming Activities</h2>
+                    <p>Get a snapshot of upcoming tasks and farm activities.</p>
+                    <ol id="upcoming"></ol>
+                </div>
+            </div>
+            <!-- Modal HTML -->
+            <!-- Modal HTML -->
+            <div id="updateTaskModal" class="modals">
+                <div class="modals-content">
+                    <span class="close-btn">&times;</span>
+                    <form id="updateTaskForm">
+                        <label for="taskName">Task Name:</label>
+                        <input type="text" id="taskName" name="taskName">
+                        <label for="taskDate">Task Date:</label>
+                        <input type="date" id="taskDate" name="taskDate">
+                        <label for="taskTime">Task Time:</label>
+                        <input type="time" id="taskTime" name="taskTime">
+                        <label for="taskDescription">Task Description:</label>
+                        <textarea id="taskDescription" name="taskDescription"></textarea>
+                        <button type="submit">Update Task</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <h2>Crop Management</h2>
+                <p>Track crop planting schedules easily.</p>
+                <form id="cropForm">
+                    <label for="cropName">Crop Name:</label>
+                    <input type="text" id="cropName" name="cropName" required>
+
+                    <label for="plantingDate">Planting Date:</label>
+                    <input type="date" id="plantingDate" name="plantingDate" required>
+
+                    <label for="expectedHarvest">Expected Harvest Date:</label>
+                    <input type="date" id="expectedHarvest" name="expectedHarvest" required>
+
+                    <button type="submit">Add Crop</button>
+                </form>
+                <div id="cropList">
+                    <!-- Crop details will be dynamically added here -->
+                </div>
+            </div>
+            <div class="card">
+                <h2>Task Scheduler</h2>
+                <p>Schedule planting, watering, and harvesting tasks seamlessly.</p>
+                <form id="taskSchedulerForm">
+                    <label for="taskName">Task Name:</label>
+                    <input type="text" id="taskName" name="taskName" required>
+
+                    <label for="taskDate">Task Date:</label>
+                    <input type="date" id="taskDate" name="taskDate" required>
+
+                    <label for="taskTime">Task Time:</label>
+                    <input type="time" id="taskTime" name="taskTime" required>
+
+                    <label for="taskDescription">Task Description:</label>
+                    <textarea id="taskDescription" name="taskDescription" required></textarea>
+
+                    <button type="submit">Add Task</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Livestock Management</h2>
+                <p>Manage livestock health records and inventory effortlessly.</p>
+                <form id="livestockForm">
+                    <label for="livestockType">Type:</label>
+                    <input type="text" id="livestockType" name="livestockType" required>
+
+                    <label for="livestockAge">Age:</label>
+                    <input type="number" id="livestockAge" name="livestockAge" required>
+
+                    <label for="livestockHealth">Health Status:</label>
+                    <input type="text" id="livestockHealth" name="livestockHealth" required>
+
+                    <label for="livestockNotes">Notes:</label>
+                    <textarea id="livestockNotes" name="livestockNotes" required></textarea>
+
+                    <button type="submit">Add Livestock</button>
+
+                </form>
+                <div id="livestockList">
+                    <!-- Livestock details will be dynamically added here -->
+                </div>
+
+
+            </div>
+        </section>
+
+        <div id="chatbot">
+            <div id="chatbox">
+
+            </div>
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </main>
+    <script src="index.js"></script>
+    
+</body>
+
+</html>
